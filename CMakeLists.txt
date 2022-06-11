@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.16)
 
 project(argparse VERSION 0.1.0 LANGUAGES C)
 
@@ -26,3 +26,6 @@ endif()
 if(NOT (ARGPARSE_STATIC OR ARGPARSE_SHARED))
 	add_library(argparse OBJECT ${sources})
 endif()
+
+set_property(TARGET ${target} PROPERTY
+		MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
