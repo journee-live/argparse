@@ -27,5 +27,6 @@ if(NOT (ARGPARSE_STATIC OR ARGPARSE_SHARED))
 	add_library(argparse OBJECT ${sources})
 endif()
 
-set_property(TARGET ${target} PROPERTY
+
+set_property(TARGET argparse PROPERTY
 		MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
