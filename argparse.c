@@ -276,6 +276,10 @@ unknown:
             argparse_usage(self);
             exit(EXIT_FAILURE);
         }
+        else
+        {
+            self->out[self->cpidx++] = self->argv[0];
+        }
     }
 
 end:
